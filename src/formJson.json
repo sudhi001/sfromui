@@ -1,0 +1,104 @@
+{
+  "forms": [
+    {
+      "id": "demo",
+      "steps": [
+        {
+          "meta": {
+            "id": "step1",
+            "title": "Demo aopplicatuon"
+          },
+          "onNext": {
+            "id": "step2"
+          },
+          "form": [
+            {
+              "type": "text",
+              "text": "App test form"
+            }
+          ]
+        },
+        {
+          "meta": {
+            "id": "step2",
+            "title": "Step One"
+          },
+          "onNext": {
+            "id": "step3"
+          },
+          "form": [
+            {
+              "key": "name",
+              "type": "input",
+              "keyoard": "text",
+              "hint": "Name",
+              "label": "Name",
+              "validations": [
+                {
+                  "expression": "isEmpty",
+                  "message": "Name should not be empty"
+                }
+              ]
+            }
+            
+          ]
+        },
+        {
+          "meta": {
+            "id": "step3",
+            "title": "Step Two"
+          },
+          "onBack": {
+            "id": "step2"
+          },
+          "onNext": {
+            "action": "step4"
+          },
+          "form": [
+            {
+              "key": "age",
+              "type": "input",
+              "keyoard": "integer",
+              "hint": "Age Of User",
+              "label": "Age Of ${name}",
+              "validations": [
+                {
+                  "expression": "isLessThan 18",
+                  "message": "Age should be greater than 18"
+                },
+                {
+                  "expression": "isEmpty",
+                  "message": "Age is required"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "meta": {
+            "id": "step4",
+            "title": "Final Step"
+          },
+          "onBack": {
+            "id": "step3"
+          },
+          "onNext": {
+            "action": "finish"
+          },
+          "form": [
+            {
+              "type": "label",
+              "text": "Name is ${name}",
+              "width":"100%"
+            },
+            {
+              "type": "label",
+              "text": "Age is ${age}",
+              "width":"100%"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
