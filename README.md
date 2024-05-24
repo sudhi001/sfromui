@@ -10,6 +10,10 @@ SFormUI is a React project aimed at dynamically creating a form UI wizard from J
 - **Validation Support**: SFormUI supports validation of form inputs based on user-defined rules, ensuring data integrity and accuracy.
 - **Responsive Design**: The form UI components are designed to be responsive, providing a seamless user experience across different devices and screen sizes.
 
+### Demo
+
+Check out the live demo [here](https://sfromui-sudhi001s-projects.vercel.app).
+
 ### Installation
 
 To install and use SFormUI in your React project, follow these steps:
@@ -41,7 +45,108 @@ import React from 'react';
 import SFormUI from 'sformui';
 
 const formData = {
-  // Define your form structure here
+  "forms": [
+    {
+      "id": "demo",
+      "steps": [
+        {
+          "meta": {
+            "id": "step1",
+            "title": "Demo Application"
+          },
+          "onNext": {
+            "id": "step2"
+          },
+          "form": [
+            {
+              "type": "text",
+              "text": "App test form"
+            }
+          ]
+        },
+        {
+          "meta": {
+            "id": "step2",
+            "title": "Step One"
+          },
+          "onNext": {
+            "id": "step3"
+          },
+          "form": [
+            {
+              "key": "name",
+              "type": "input",
+              "keyboard": "text",
+              "hint": "Name",
+              "label": "Name",
+              "validations": [
+                {
+                  "expression": "isEmpty",
+                  "message": "Name should not be empty"
+                }
+              ]
+            }
+            
+          ]
+        },
+        {
+          "meta": {
+            "id": "step3",
+            "title": "Step Two"
+          },
+          "onBack": {
+            "id": "step2"
+          },
+          "onNext": {
+            "action": "step4"
+          },
+          "form": [
+            {
+              "key": "age",
+              "type": "input",
+              "keyboard": "integer",
+              "hint": "Age Of User",
+              "label": "Age Of ${name}",
+              "validations": [
+                {
+                  "expression": "isLessThan 18",
+                  "message": "Age should be greater than 18"
+                },
+                {
+                  "expression": "isEmpty",
+                  "message": "Age is required"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "meta": {
+            "id": "step4",
+            "title": "Final Step"
+          },
+          "onBack": {
+            "id": "step3"
+          },
+          "onNext": {
+            "action": "finish"
+          },
+          "form": [
+            {
+              "type": "label",
+              "text": "Name is ${name}",
+              "width":"100%"
+            },
+            {
+              "type": "label",
+              "text": "Age is ${age}",
+              "width":"100%"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 };
 
 const MyFormComponent = () => {
