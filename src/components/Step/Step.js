@@ -2,6 +2,10 @@ import React from 'react';
 import InputField from '../InputField/InputField'; // Update the import path
 import LabelField from '../LabelField/LabelField'; // Update the import path
 import { validate } from '../../utils/validation';
+import Heading from '../Common/Heading';
+import Paragraph from '../Common/Paragraph';
+import ParagraphGrid from '../Common/ParagraphGrid'
+import Blockquote from '../Common/Blockquote';
 
 const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, formJson }) => {
   const handleChange = (e, key) => {
@@ -29,8 +33,18 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
       <h1 className="text-3xl font-bold mb-6 text-center">{step.meta.title}</h1>
       <form className="max-w-lg mx-auto p-8">
         <div className="grid grid-cols-1 gap-4">
-          {step.form.map(field => {
+          {step.form.map((field, index) => {
             switch (field.type) {
+              case 'BLOCK_QUOTE':
+                return <Blockquote key={index} field={field} />;
+                case 'HEADING':
+                  return <Heading key={index} field={field} />;
+              case 'PARAGRAPH':
+                if (field.subType === 'GRID') {
+                  return <ParagraphGrid key={index} field={field} />;
+                } else {
+                  return <Paragraph key={index} field={field} />;
+                }
               case 'input':
                 return (
                   <InputField
@@ -57,7 +71,7 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
             }
           })}
         </div>
-        <footer className="fixed bottom-0 left-0 right-0 w-full bg-white p-4">
+        <footer className="fixed bottom-0 left-0 right-0 w-full bg-white p-4 border-t border-gray-200">
           <div className="container mx-auto flex flex-col items-center">
             <div className="flex justify-center">
               {step.onBack && (
@@ -77,7 +91,7 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
                 Continue
               </button>
             </div>
-            <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 pt-8">
+            <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 pt-3">
               © {formJson.meta.footer.copyRightYears} <a href={formJson.meta.footer.link} className="hover:underline">{formJson.meta.footer.name}</a>. All Rights Reserved.
             </span>
           </div>

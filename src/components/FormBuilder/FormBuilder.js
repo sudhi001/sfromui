@@ -30,14 +30,14 @@ const FormBuilder = () => {
 
   return (
     <div>
-      <nav class="bg-whitefixed w-full z-20 top-0 left-0 border-b border-gray-200 min-h-[64px] fixed">
+      <nav class="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 min-h-[64px] fixed">
         <div class="container mx-auto flex items-center justify-center py-4" id="navbar-sticky">
           <a href={formJson.meta.navbar.link} class="flex items-center">
             <span class="self-center text-2xl font-semibold whitespace-nowrap">{formJson.meta.navbar.title}</span>
           </a>
         </div>
       </nav>
-      <main class="flex-grow mt-[64px]">
+      <main class="flex-grow mt-[64px] mb-[64px] overflow-y-auto">
       <Step
         step={currentStep}
         formData={formData}
