@@ -1,4 +1,15 @@
 {
+ "meta":{
+  "navbar":{
+    "title":"Demo aopplicatuon",
+    "link":"https://www.sudhi.in"
+  },
+   "footer":{
+    "copyRightYears":"2023",
+  "name":"SForm",
+  "link":"https://www.sudhi.in"
+   }
+ },
   "forms": [
     {
       "id": "demo",
@@ -39,8 +50,59 @@
                   "message": "Name should not be empty"
                 }
               ]
+            },
+            {
+              "key": "aboutMe",
+              "type": "input",
+              "line": 3,
+              "keyoard": "text",
+              "hint": "About Me...",
+              "label": "About Me",
+              "validations": [
+                {
+                  "expression": "isEmpty",
+                  "message": "Describe your self"
+                }
+              ]
+            },
+            {
+              "key": "country",
+              "type": "input",
+              "select":1,
+              "label": "Country",
+              "options":[
+                {
+                  "key":"US",
+                  "value":"United Sates"
+                },
+                {
+                  "key":"IN",
+                  "value":"India"
+                }
+              ]
+            },
+            {
+              "key": "rcountry",
+              "type": "input",
+              "radioButtons":1,
+              "label": "Country",
+              "options":[
+                {
+                  "key":"US",
+                  "value":"United Sates"
+                },
+                {
+                  "key":"IN",
+                  "value":"India"
+                }
+              ]
+            },
+            {
+              "key": "termsAndConditionsAcceptance",
+              "type": "input",
+              "checkable":true,
+              "text": "I agree to the <a href=\"#\" class=\"text-blue-600 hover:underline dark:text-blue-500\">terms and conditions</a>."
             }
-            
           ]
         },
         {
@@ -63,14 +125,25 @@
               "label": "Age Of ${name}",
               "validations": [
                 {
-                  "expression": "isLessThan 18",
+                  "expression": "isGreaterThan 18",
                   "message": "Age should be greater than 18"
+                },
+                {
+                  "expression": "isLessThan 100",
+                  "message": "Age should be less than 100"
                 },
                 {
                   "expression": "isEmpty",
                   "message": "Age is required"
                 }
               ]
+            },
+            {
+              "key": "resume",
+              "type": "input",
+              "file":true,
+              "label": "Upload your resume",
+              "description":"A profile picture is useful to confirm your are logged into your account"
             }
           ]
         },
@@ -88,14 +161,28 @@
           "form": [
             {
               "type": "label",
-              "text": "Name is ${name}",
-              "width":"100%"
+              "text": "Name is ${name}"
             },
             {
               "type": "label",
-              "text": "Age is ${age}",
-              "width":"100%"
+              "text": "About me is ${aboutMe}"
+            },
+            {
+              "type": "label",
+              "text": "Age is ${age}"
+            },
+            
+            {
+              "type": "label",
+              "text": "Country is ${country}"
+            }, {
+              "type": "label",
+              "text": "Country is ${rcountry}"
+            }, {
+              "type": "label",
+              "text": "Terms and conditions is ${termsAndConditionsAcceptance}"
             }
+
           ]
         }
       ]

@@ -5,10 +5,14 @@ const validationFunctions = {
     }
     return true; // consider undefined, null, or non-string values as empty
   },
-  'isLessThan': (value, limit) => parseFloat(value) < parseFloat(limit),
+  'isGreaterThan': (value, limit) => parseFloat(value) < parseFloat(limit),
+  'isLessThan': (value, limit) => parseFloat(value) > parseFloat(limit),
 };
 
 export const validate = (value, validations) => {
+  if (!Array.isArray(validations)) {
+    return null;
+}
   for (const validation of validations) {
     const { expression, message } = validation;
     const [fnName, ...args] = expression.split(' ');

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Step from '../Step/Step';
 import formJson from '../../formJson.json';
-import './FormBuilder.css'; // Import CSS file for styling
 
 const FormBuilder = () => {
   const [currentStepId, setCurrentStepId] = useState(formJson.forms[0].steps[0].meta.id);
@@ -30,8 +29,15 @@ const FormBuilder = () => {
   };
 
   return (
-    <div className="form-container">
-      <h1>Form Builder</h1>
+    <div>
+      <nav class="bg-whitefixed w-full z-20 top-0 left-0 border-b border-gray-200 min-h-[64px] fixed">
+        <div class="container mx-auto flex items-center justify-center py-4" id="navbar-sticky">
+          <a href={formJson.meta.navbar.link} class="flex items-center">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap">{formJson.meta.navbar.title}</span>
+          </a>
+        </div>
+      </nav>
+      <main class="flex-grow mt-[64px]">
       <Step
         step={currentStep}
         formData={formData}
@@ -39,8 +45,11 @@ const FormBuilder = () => {
         errors={errors}
         handleNext={handleNext}
         handleBack={handleBack}
+        formJson={formJson}
       />
+      </main>
     </div>
+
   );
 };
 

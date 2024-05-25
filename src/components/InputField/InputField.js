@@ -1,32 +1,91 @@
 import React from 'react';
-import './InputField.css'; // Import CSS file for styling
-import LabelField from '../LabelField/LabelField'; 
+import LabelField from '../LabelField/LabelField';
+import RatingInput from '../RatingInput';
 
-const InputField = ({formData, field, value, error, handleChange }) => {
+const InputField = ({ formData, field, value, error, handleChange }) => {
   const handleInputChange = (e) => {
     const { value } = e.target;
-    if (field.keyoard === 'integer') {
-      // Only allow integers
-      if (/^\d*$/.test(value)) {
-        handleChange(e, field.key);
-      }
-    } else {
-      handleChange(e, field.key);
+    if (field.keyboard === 'integer' && !/^\d*$/.test(value)) {
+      return; // Only allow integers
     }
+    handleChange(e, field.key);
   };
 
   return (
-    <div className="input-field-container"> {/* Apply CSS class for styling */}
-       <LabelField field={field} formData={formData} /> {/* Use the LabelField component */}
-   
-      <input
-        className="iphone-input" 
-        type="text"
-        placeholder={field.hint}
-        value={value}
-        onChange={handleInputChange}
-      />
-      {error && <span className="error-message">{error}</span>} {/* Apply CSS class for styling */}
+    <div>
+      {field.label && <LabelField field={field} formData={formData} />}
+      {field.line && field.line > 1 ? (
+        <textarea
+          className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+          rows={field.line}
+          placeholder={field.hint}
+          value={value}
+          onChange={handleInputChange}
+        />
+      ) : field.select ? (
+        <select
+          className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4"
+          value={value}
+          onChange={handleInputChange}
+        >
+          {field.options.map(option => (
+            <option key={option.key} value={option.key}>
+              {option.value}
+            </option>
+          ))}
+        </select>
+      ) : field.radioButtons ? (
+        <fieldset>
+          {field.options.map(option => (
+            <div key={option.key} className="flex items-center mb-4">
+              <input
+                id={option.key}
+                type="radio"
+                name={field.key}
+                value={option.key}
+                className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+                checked={value === option.key}
+                onChange={handleInputChange}
+              />
+              <label htmlFor={option.key} className="block ms-2 text-sm font-medium text-gray-900">
+                {option.value}
+              </label>
+            </div>
+          ))}
+        </fieldset>
+      ) : field.checkable ? (
+        <div class="flex items-center mb-4">
+          <input
+            type="checkbox"
+            id={field.key}
+            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2"
+            checked={value}
+            onChange={handleInputChange}
+          />
+          <label htmlFor={field.key} class="ms-2 text-sm font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: field.text }} />
+        </div>
+      ) : field.rating ? (
+        <RatingInput value={value} field={field} onChange={handleInputChange} />
+      ) : field.file ? (
+        <input
+          className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+          type="file"
+          placeholder={field.hint}
+          value={value}
+          aria-describedby={field.key}
+          onChange={handleInputChange}
+        />
+      ) : (
+        <input
+          className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+          type="text"
+          placeholder={field.hint}
+          value={value}
+          onChange={handleInputChange}
+        />
+      )}
+      {field.description && <div className="mt-1 text-sm text-gray-700" id={field.key}>{field.description}</div>}
+      {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
     </div>
   );
 };
