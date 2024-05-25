@@ -14,7 +14,7 @@ const CardInput = ({ id, checked, onChange }) => (
 
 // CardLabel component
 const CardLabel = ({ label, description }) => (
-  <div className="ml-5">
+  <div className="ml-2">
     <span className="mt-2 font-semibold">{label}</span>
     <p className="text-slate-500 text-sm leading-6">{description}</p>
   </div>
@@ -25,7 +25,7 @@ const OptionCard = ({ id, checked, onChange, label, description }) => (
   <div className="flex w-full">
     <CardInput id={id} checked={checked} onChange={onChange} />
     <label
-      className="peer-checked:border-2 peer-checked:border-blue-400 peer-checked:bg-blue-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4 pr-20 mt-2"
+      className="w-full peer-checked:border-2 peer-checked:border-blue-400 peer-checked:bg-blue-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4 pr-10 mt-2"
       htmlFor={id}
     >
       <CardLabel label={label} description={description} />

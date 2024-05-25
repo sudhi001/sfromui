@@ -49,8 +49,6 @@
           "columns": 3,
           "itemClassName": "text-gray-500 dark:text-gray-400",
           "textArray": [
-            "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.",
-            "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.",
             "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change."
           ]
         },
@@ -125,7 +123,7 @@
           "key": "termsAndConditionsAcceptance",
           "type": "input",
           "checkable": true,
-          "text": "I agree to the <a href=\"#\" class=\"text-blue-600 hover:underline dark:text-blue-500\">terms and conditions</a>.",
+          "text": "I Agree to the <a href=\"#\" class=\"text-blue-600 hover:underline dark:text-blue-500\">terms and conditions</a>.",
           "validations": [
             {
               "expression": "mustTrue",
@@ -218,13 +216,13 @@
           "type": "OPTION_CARD_LIST",
           "options": [
             {
-              "key": "12",
+              "key": "pk1",
               "description": "Project One",
               "label": "About Me",
               "value": "12"
             },
             {
-              "key": "13",
+              "key": "pk2",
               "description": "Project Two",
               "label": "Deo Me",
               "value": "13"
@@ -243,16 +241,16 @@
           "gravity": "VERTICAL",
           "options": [
             {
-              "key": "124",
+              "key": "key0",
               "description": "Project Onezlnxvm,ncx,mnv,zbn,cn,n,zmcnzm,bn,mxn,mljnjldsbfb",
               "label": "About Me",
-              "value": "124"
+              "value": "key1123"
             },
             {
-              "key": "134",
+              "key": "key1",
               "description": "Project TwoZNcmvnb,n,bn,xzbnc,bnvzxncmv.ncm",
               "label": "Deo Me",
-              "value": "134"
+              "value": "key11234"
             }
           ]
         }
