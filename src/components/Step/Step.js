@@ -77,7 +77,7 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
               {step.onBack && (
                 <button
                   type="button"
-                  className="max-w-sm flex-1 bg-gray-500 text-white py-3 px-20 rounded-md hover:bg-gray-600 mr-2"
+                  className="max-w-sm flex-1 bg-gray-500 text-white py-3 px-12 rounded-md hover:bg-gray-600 mr-2"
                   onClick={handleBack}
                 >
                   Previous
@@ -85,7 +85,7 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
               )}
               <button
                 type="button"
-                className="max-w-sm flex-1 bg-blue-500 text-white py-3 px-20 rounded-md hover:bg-blue-600"
+                className="max-w-sm flex-1 bg-blue-500 text-white py-3 px-12 rounded-md hover:bg-blue-600"
                 onClick={onNextClick}
               >
                 Continue
