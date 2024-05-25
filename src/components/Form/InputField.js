@@ -23,7 +23,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
         />
       ) : field.select ? (
         <select
-          className="max-w-sm w-full p-4  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 "
+          className="max-w-sm w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 "
           value={value}
           onChange={handleInputChange}
         >
