@@ -37,17 +37,18 @@ const FormBuilder = () => {
           </a>
         </div>
       </nav>
-      <main class="flex-grow mt-[64px] mb-[64px] overflow-y-auto">
-      <Step
-        step={currentStep}
-        formData={formData}
-        setFormData={setFormData}
-        errors={errors}
-        handleNext={handleNext}
-        handleBack={handleBack}
-        formJson={formJson}
-      />
+      <main className="flex-grow mt-[64px] mb-[64px] overflow-y-auto">
+        <Step
+          step={currentStep}
+          formData={formData}
+          setFormData={setFormData}
+          errors={errors}
+          handleNext={handleNext}
+          handleBack={handleBack}
+          formJson={formJson}
+        />
       </main>
+
     </div>
 
   );
