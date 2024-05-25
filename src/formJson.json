@@ -149,7 +149,7 @@
         {
           "key": "age",
           "type": "input",
-          "keyoard": "integer",
+          "keyboard": "integer",
           "hint": "Age Of User",
           "label": "Age Of ${name}",
           "validations": [

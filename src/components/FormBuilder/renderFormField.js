@@ -26,7 +26,7 @@ const renderFormField = (field, index, formData, errors, handleChange) => {
     case 'DESCRIPTION_LIST':
       return <DescriptionList key={index} formData={formData} field={field} />;
       case 'INPUT_SCALE':
-        return <InputScale key={index}  field={field} value={formData[field.key]} onChange={handleChange} formData={formData}/>;
+        return <InputScale key={index}  field={field} value={formData[field.key] ||''} onChange={handleChange} />;
     case 'COUNTER_BUTTON':
       return <CounterButton key={index} field={field} onChange={handleChange} value={formData[field.key] || 1}/>;
     case 'PARAGRAPH':
