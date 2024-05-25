@@ -27,7 +27,7 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
   return (
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-3xl font-bold mb-6 text-center">{step.meta.title}</h1>
-      <form className="max-w-lg mx-auto p-6">
+      <form className="max-w-lg mx-auto p-8">
         <div className="grid grid-cols-1 gap-4">
           {step.form.map(field => {
             switch (field.type) {
@@ -63,7 +63,7 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
               {step.onBack && (
                 <button
                   type="button"
-                  className="flex-1 bg-gray-500 text-white py-3 px-20 rounded-md hover:bg-gray-600 mr-2"
+                  className="max-w-sm flex-1 bg-gray-500 text-white py-3 px-20 rounded-md hover:bg-gray-600 mr-2"
                   onClick={handleBack}
                 >
                   Previous
@@ -71,7 +71,7 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
               )}
               <button
                 type="button"
-                className="flex-1 bg-blue-500 text-white py-3 px-20 rounded-md hover:bg-blue-600"
+                className="max-w-sm flex-1 bg-blue-500 text-white py-3 px-20 rounded-md hover:bg-blue-600"
                 onClick={onNextClick}
               >
                 Continue

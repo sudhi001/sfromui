@@ -16,7 +16,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
       {field.label && <LabelField field={field} formData={formData} />}
       {field.line && field.line > 1 ? (
         <textarea
-          className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+          className="max-w-sm p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
           rows={field.line}
           placeholder={field.hint}
           value={value}
@@ -24,7 +24,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
         />
       ) : field.select ? (
         <select
-          className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4"
+          className="max-w-sm mx-autobg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 "
           value={value}
           onChange={handleInputChange}
         >
@@ -43,7 +43,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
                 type="radio"
                 name={field.key}
                 value={option.key}
-                className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
+                className=" max-w-sm w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300"
                 checked={value === option.key}
                 onChange={handleInputChange}
               />
@@ -58,7 +58,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
           <input
             type="checkbox"
             id={field.key}
-            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2"
+            className="max-w-sm w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2"
             checked={value}
             onChange={handleInputChange}
           />
@@ -68,7 +68,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
         <RatingInput value={value} field={field} onChange={handleInputChange} />
       ) : field.file ? (
         <input
-          className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+          className="max-w-sm w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
           type="file"
           placeholder={field.hint}
           value={value}
@@ -77,7 +77,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
         />
       ) : (
         <input
-          className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+          className="max-w-sm w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
           type="text"
           placeholder={field.hint}
           value={value}

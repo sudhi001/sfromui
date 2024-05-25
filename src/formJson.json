@@ -81,22 +81,7 @@
                 }
               ]
             },
-            {
-              "key": "rcountry",
-              "type": "input",
-              "radioButtons":1,
-              "label": "Country",
-              "options":[
-                {
-                  "key":"US",
-                  "value":"United Sates"
-                },
-                {
-                  "key":"IN",
-                  "value":"India"
-                }
-              ]
-            },
+           
             {
               "key": "termsAndConditionsAcceptance",
               "type": "input",
@@ -135,6 +120,21 @@
                 {
                   "expression": "isEmpty",
                   "message": "Age is required"
+                }
+              ]
+            }, {
+              "key": "rcountry",
+              "type": "input",
+              "radioButtons":1,
+              "label": "Country",
+              "options":[
+                {
+                  "key":"US",
+                  "value":"United Sates"
+                },
+                {
+                  "key":"IN",
+                  "value":"India"
                 }
               ]
             },
