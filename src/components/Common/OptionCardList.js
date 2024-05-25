@@ -15,10 +15,12 @@ const CardInput = ({ id, checked, onChange }) => (
 // CardLabel component
 const CardLabel = ({ label, description }) => (
   <div className="ml-2">
-    <span className="font-semibold">{label}</span> {/* Remove unnecessary margin top */}
-    <p className="text-slate-500 text-sm">{description}</p>
+    <span className="font-semibold">{label}</span>
+    <p className="text-slate-500 text-sm overflow-hidden max-h-24 whitespace-normal break-words">{description}</p>
   </div>
 );
+
+
 
 // OptionCard component
 const OptionCard = ({ id, checked, onChange, label, description }) => (

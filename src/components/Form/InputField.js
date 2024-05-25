@@ -3,7 +3,7 @@ import LabelField from '../Form/LabelField';
 
 const InputField = ({ formData, field, value, error, handleChange }) => {
   const handleInputChange = (e) => {
-    const { value } = e.target;
+    const value = e.target ? e.target.value : e;
     if (field.keyboard === 'integer' && !/^\d*$/.test(value)) {
       return; // Only allow integers
     }
@@ -60,7 +60,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
             id={field.key}
             className="max-w-sm w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2"
             checked={value}
-            onChange={handleInputChange}
+            onChange={()=>{handleInputChange(!value, field.key)}}
           />
           <label htmlFor={field.key} className="ms-2 text-sm font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: field.text }} />
         </div>
