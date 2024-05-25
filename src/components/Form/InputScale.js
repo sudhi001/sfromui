@@ -20,7 +20,7 @@ const InputScale = ({ field, value, onChange }) => {
                             onChange={() => handleItemClick(item)}
                         />
                         <label
-                            className="peer-checked:bg-blue-500 peer-checked:text-white flex items-center justify-center hover:bg-blue-300 border border-gray-300 rounded-lg px-8 py-4 md-px-4 md-py-2 cursor-pointer select-none"
+                            className="flex h-12 w-16  peer-checked:bg-blue-500 peer-checked:text-white flex items-center justify-center hover:bg-blue-300 border border-gray-300 rounded-lg cursor-pointer select-none"
                             htmlFor={`${field.key}_${item}`}
                         >
                             <span className="font-semibold">{item}</span>
