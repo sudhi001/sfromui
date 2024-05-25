@@ -37,11 +37,11 @@ const OptionCard = ({ id, checked, onChange, label, description }) => (
 
 // OptionCardList component
 const OptionCardList = ({ field, formData, onChange }) => (
-  <div className="text-gray-700">
+  <div className="mx-w-sm text-gray-700">
     <h3 className="font-semibold">{field.label}</h3>
     <div className={`${
       field.gravity === "VERTICAL"
-        ? 'my-auto mx-auto flex-col justify-center md:justify-start'
+        ? 'my-auto mx-auto flex-col justify-start'
         : `grid gap-2 grid-cols-${field.options.length}`
     }`}>
       {field.options.map((fieldItem) => (
