@@ -25,7 +25,7 @@ const OptionCard = ({ id, checked, onChange, label, description }) => (
   <div className="flex w-full">
     <CardInput id={id} checked={checked} onChange={onChange} />
     <label
-      className="w-full peer-checked:border-2 peer-checked:border-blue-400 peer-checked:bg-blue-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4 pr-10 mt-2"
+      className="w-full peer-checked:border-2 peer-checked:border-blue-400 peer-checked:bg-blue-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4 pr-10 md:pr-5 md:p-2 mt-2"
       htmlFor={id}
     >
       <CardLabel label={label} description={description} />
