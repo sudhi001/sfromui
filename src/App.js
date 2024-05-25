@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import FormBuilder from './components/FormBuilder/FormBuilder';
+import formJson from './formJson.json';
 
 const App = () => {
   useEffect(() => {
@@ -14,7 +15,7 @@ const App = () => {
 
   return (
     <div className="w-full">
-      <FormBuilder />
+      <FormBuilder formJson={formJson} />
     </div>
   );
 };

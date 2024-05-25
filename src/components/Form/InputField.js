@@ -1,6 +1,5 @@
 import React from 'react';
-import LabelField from '../LabelField/LabelField';
-import RatingInput from '../RatingInput';
+import LabelField from '../Form/LabelField';
 
 const InputField = ({ formData, field, value, error, handleChange }) => {
   const handleInputChange = (e) => {
@@ -28,6 +27,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
           value={value}
           onChange={handleInputChange}
         >
+          <option>{field.placeholder || 'Select Any One'}</option>
           {field.options.map(option => (
             <option key={option.key} value={option.key}>
               {option.value}
@@ -54,7 +54,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
           ))}
         </fieldset>
       ) : field.checkable ? (
-        <div class="flex items-center mb-4">
+        <div className="flex items-center mb-4">
           <input
             type="checkbox"
             id={field.key}
@@ -62,11 +62,9 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
             checked={value}
             onChange={handleInputChange}
           />
-          <label htmlFor={field.key} class="ms-2 text-sm font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: field.text }} />
+          <label htmlFor={field.key} className="ms-2 text-sm font-medium text-gray-900" dangerouslySetInnerHTML={{ __html: field.text }} />
         </div>
-      ) : field.rating ? (
-        <RatingInput value={value} field={field} onChange={handleInputChange} />
-      ) : field.file ? (
+      ): field.file ? (
         <input
           className="max-w-sm w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
           type="file"

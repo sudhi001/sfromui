@@ -1,220 +1,306 @@
 {
- "meta":{
-  "navbar":{
-    "title":"Demo aopplicatuon",
-    "link":"https://www.sudhi.in"
+  
+  "meta": {
+    "id":"formone",
+    "navbar": {
+      "title": "Demo aopplicatuon",
+      "link": "https://www.sudhi.in"
+    },
+    "footer": {
+      "copyRightYears": "2023",
+      "name": "SForm",
+      "link": "https://www.sudhi.in"
+    }
   },
-   "footer":{
-    "copyRightYears":"2023",
-  "name":"SForm",
-  "link":"https://www.sudhi.in"
-   }
- },
-  "forms": [
+  "steps": [
     {
-      "id": "demo",
-      "steps": [
+      "meta": {
+        "id": "step1",
+        "title": "Demo aopplicatuon"
+      },
+      "onNext": {
+        "id": "step2"
+      },
+      "form": [
         {
-          "meta": {
-            "id": "step1",
-            "title": "Demo aopplicatuon"
-          },
-          "onNext": {
-            "id": "step2"
-          },
-          "form": [
+          "type": "HEADING",
+          "level": 1,
+          "className": "mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white",
+          "text": "We invest in the world’s <em>potential</em>"
+        },
+        {
+          "type": "BLOCK_QUOTE",
+          "text": "\"Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.\""
+        },
+        {
+          "type": "HEADING",
+          "level": 2,
+          "className": "mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400",
+          "text": "Here at Flowbite we focus on markets where <strong>technology</strong>, <em>innovation</em>, and capital can unlock long-term value and drive economic growth."
+        },
+        {
+          "type": "PARAGRAPH",
+          "className": "mb-3 text-gray-500 dark:text-gray-400",
+          "text": "Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes."
+        },
+        {
+          "type": "PARAGRAPH",
+          "subType": "GRID",
+          "columns": 3,
+          "itemClassName": "text-gray-500 dark:text-gray-400",
+          "textArray": [
+            "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.",
+            "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.",
+            "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change."
+          ]
+        },
+        {
+          "type": "text",
+          "text": "App test form"
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step2",
+        "title": "Step One"
+      },
+      "onNext": {
+        "id": "step3"
+      },
+      "onBack": {
+        "id": "step1"
+      },
+      "form": [
+        {
+          "key": "name",
+          "type": "input",
+          "keyoard": "text",
+          "hint": "Name",
+          "label": "Name",
+          "validations": [
             {
-              "type": "HEADING",
-              "level": 1,
-              "className": "mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white",
-              "text": "We invest in the world’s <em>potential</em>"
-            },
-            {
-              "type": "BLOCK_QUOTE",
-              "text": "\"Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes.\""
-            },
-            {
-              "type": "HEADING",
-              "level": 2,
-              "className": "mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400",
-              "text": "Here at Flowbite we focus on markets where <strong>technology</strong>, <em>innovation</em>, and capital can unlock long-term value and drive economic growth."
-            },
-            {
-              "type": "PARAGRAPH",
-              "className": "mb-3 text-gray-500 dark:text-gray-400",
-              "text": "Track work across the enterprise through an open, collaborative platform. Link issues across Jira and ingest data from other software development tools, so your IT support and operations teams have richer contextual information to rapidly respond to requests, incidents, and changes."
-            },
-            {
-              "type": "PARAGRAPH",
-              "subType":"GRID",
-              "columns":3,
-              "itemClassName": "text-gray-500 dark:text-gray-400",
-              "textArray": [
-                "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.",
-                "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.",
-                "Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change."
-              ]
-            },
-            {
-              "type": "text",
-              "text": "App test form"
+              "expression": "isEmpty",
+              "message": "Name should not be empty"
             }
           ]
         },
         {
-          "meta": {
-            "id": "step2",
-            "title": "Step One"
-          },
-          "onNext": {
-            "id": "step3"
-          },
-          "form": [
+          "key": "counter",
+          "label": "Counter",
+          "placeholder":" Please select a 5 digit number from 0 to 9.",
+          "type": "COUNTER_BUTTON"
+        },
+        {
+          "key": "aboutMe",
+          "type": "input",
+          "line": 3,
+          "keyoard": "text",
+          "hint": "About Me...",
+          "label": "About Me",
+          "validations": [
             {
-              "key": "name",
-              "type": "input",
-              "keyoard": "text",
-              "hint": "Name",
-              "label": "Name",
-              "validations": [
-                {
-                  "expression": "isEmpty",
-                  "message": "Name should not be empty"
-                }
-              ]
+              "expression": "isEmpty",
+              "message": "Describe your self"
+            }
+          ]
+        },
+        {
+          "key": "country",
+          "type": "input",
+          "select": 1,
+          "label": "Country",
+          "options": [
+            {
+              "key": "US",
+              "value": "United Sates"
             },
             {
-              "key": "aboutMe",
-              "type": "input",
-              "line": 3,
-              "keyoard": "text",
-              "hint": "About Me...",
+              "key": "IN",
+              "value": "India"
+            }
+          ]
+        },
+        {
+          "key": "termsAndConditionsAcceptance",
+          "type": "input",
+          "checkable": true,
+          "text": "I agree to the <a href=\"#\" class=\"text-blue-600 hover:underline dark:text-blue-500\">terms and conditions</a>.",
+          "validations": [
+            {
+              "expression": "mustTrue",
+              "message": "Please accept this"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step3",
+        "title": "Step Two"
+      },
+      "onBack": {
+        "id": "step2"
+      },
+      "onNext": {
+        "action": "step4"
+      },
+      "form": [
+        {
+          "key": "age",
+          "type": "input",
+          "keyoard": "integer",
+          "hint": "Age Of User",
+          "label": "Age Of ${name}",
+          "validations": [
+            {
+              "expression": "isGreaterThan 18",
+              "message": "Age should be greater than 18"
+            },
+            {
+              "expression": "isLessThan 100",
+              "message": "Age should be less than 100"
+            },
+            {
+              "expression": "isEmpty",
+              "message": "Age is required"
+            }
+          ]
+        },
+        {
+          "key": "rcountry",
+          "type": "input",
+          "radioButtons": 1,
+          "label": "Country",
+          "options": [
+            {
+              "key": "US",
+              "value": "United Sates"
+            },
+            {
+              "key": "IN",
+              "value": "India"
+            }
+          ]
+        },
+        {
+          "key": "resume",
+          "type": "input",
+          "file": true,
+          "label": "Upload your resume",
+          "description": "A profile picture is useful to confirm your are logged into your account"
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step4",
+        "title": "Final Step"
+      },
+      "onBack": {
+        "id": "step3"
+      },
+      "onNext": {
+        "action": "step5"
+      },
+      "form": [
+        {
+          "key": "scale",
+          "type": "INPUT_SCALE",
+          "label": "How satisfied are you with the new feature?",
+          "limitZero": "Not satisfied",
+          "limitFinal": "Very satisfied"
+        },
+        {
+          "key": "optionCards",
+          "label": "Select the Project",
+          "type": "OPTION_CARD_LIST",
+          "options": [
+            {
+              "key": "12",
+              "description": "Project One",
               "label": "About Me",
-              "validations": [
-                {
-                  "expression": "isEmpty",
-                  "message": "Describe your self"
-                }
-              ]
+              "value": "12"
             },
             {
-              "key": "country",
-              "type": "input",
-              "select":1,
-              "label": "Country",
-              "options":[
-                {
-                  "key":"US",
-                  "value":"United Sates"
-                },
-                {
-                  "key":"IN",
-                  "value":"India"
-                }
-              ]
-            },
-           
-            {
-              "key": "termsAndConditionsAcceptance",
-              "type": "input",
-              "checkable":true,
-              "text": "I agree to the <a href=\"#\" class=\"text-blue-600 hover:underline dark:text-blue-500\">terms and conditions</a>."
+              "key": "13",
+              "description": "Project Two",
+              "label": "Deo Me",
+              "value": "13"
             }
           ]
         },
         {
-          "meta": {
-            "id": "step3",
-            "title": "Step Two"
-          },
-          "onBack": {
-            "id": "step2"
-          },
-          "onNext": {
-            "action": "step4"
-          },
-          "form": [
-            {
-              "key": "age",
-              "type": "input",
-              "keyoard": "integer",
-              "hint": "Age Of User",
-              "label": "Age Of ${name}",
-              "validations": [
-                {
-                  "expression": "isGreaterThan 18",
-                  "message": "Age should be greater than 18"
-                },
-                {
-                  "expression": "isLessThan 100",
-                  "message": "Age should be less than 100"
-                },
-                {
-                  "expression": "isEmpty",
-                  "message": "Age is required"
-                }
-              ]
-            }, {
-              "key": "rcountry",
-              "type": "input",
-              "radioButtons":1,
-              "label": "Country",
-              "options":[
-                {
-                  "key":"US",
-                  "value":"United Sates"
-                },
-                {
-                  "key":"IN",
-                  "value":"India"
-                }
-              ]
-            },
-            {
-              "key": "resume",
-              "type": "input",
-              "file":true,
-              "label": "Upload your resume",
-              "description":"A profile picture is useful to confirm your are logged into your account"
-            }
-          ]
+          "key": "toggleSw",
+          "type": "TOGGLE_SWITCH",
+          "label": "Do  you want to receive notifications?"
         },
         {
-          "meta": {
-            "id": "step4",
-            "title": "Final Step"
-          },
-          "onBack": {
-            "id": "step3"
-          },
-          "onNext": {
-            "action": "finish"
-          },
-          "form": [
+          "key": "optionCards1",
+          "label": "Select the Project",
+          "type": "OPTION_CARD_LIST",
+          "gravity": "VERTICAL",
+          "options": [
             {
-              "type": "label",
-              "text": "Name is ${name}"
+              "key": "124",
+              "description": "Project Onezlnxvm,ncx,mnv,zbn,cn,n,zmcnzm,bn,mxn,mljnjldsbfb",
+              "label": "About Me",
+              "value": "124"
             },
             {
-              "type": "label",
-              "text": "About me is ${aboutMe}"
-            },
-            {
-              "type": "label",
-              "text": "Age is ${age}"
-            },
-            
-            {
-              "type": "label",
-              "text": "Country is ${country}"
-            }, {
-              "type": "label",
-              "text": "Country is ${rcountry}"
-            }, {
-              "type": "label",
-              "text": "Terms and conditions is ${termsAndConditionsAcceptance}"
+              "key": "134",
+              "description": "Project TwoZNcmvnb,n,bn,xzbnc,bnvzxncmv.ncm",
+              "label": "Deo Me",
+              "value": "134"
             }
-
+          ]
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step5",
+        "title": "Final Step"
+      },
+      "onBack": {
+        "id": "step4"
+      },
+      "onNext": {
+        "action": "finish"
+      },
+      "form": [
+        {
+          "type": "DESCRIPTION_LIST",
+          "items": [
+            {
+              "title": "Name",
+              "content": "${name}"
+            },
+            {
+              "title": "About",
+              "content": "${aboutMe}"
+            },
+            {
+              "title": "Counter",
+              "content": "${counter}"
+            },
+            {
+              "title": "Age",
+              "content": "${age}"
+            },
+            {
+              "title": "Country",
+              "content": "${country}"
+            },
+            {
+              "title": "Country",
+              "content": "${rcountry}"
+            },
+            {
+              "title": "Terms and conditions",
+              "content": "${termsAndConditionsAcceptance}"
+            }
           ]
         }
       ]
