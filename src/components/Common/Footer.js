@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = ({step, formJson ,handleBack,onNextClick}) => {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 w-full bg-white p-4 border-t border-gray-200">
+    <footer className="fixed bottom-0 left-0 right-0 w-full bg-white p-2 border-t border-gray-200">
       <div className="container mx-auto flex flex-col items-center">
         <div className="flex justify-center">
           {step.onBack && (
@@ -24,7 +24,7 @@ const Footer = ({step, formJson ,handleBack,onNextClick}) => {
             Continue
           </button>
         </div>
-        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 pt-3">
+        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 pt-2">
           © {formJson.meta.footer.copyRightYears}{' '}
           <a href={formJson.meta.footer.link} className="hover:underline">
             {formJson.meta.footer.name}

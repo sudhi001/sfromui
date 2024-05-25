@@ -205,7 +205,7 @@
       },
       "form": [
         {
-          "key": "scale",
+          "key": "scale_to",
           "type": "INPUT_SCALE",
           "label": "How satisfied are you with the new feature?",
           "limitZero": "Not satisfied",

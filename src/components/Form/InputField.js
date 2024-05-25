@@ -23,7 +23,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
         />
       ) : field.select ? (
         <select
-          className="max-w-sm mx-autobg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 "
+          className="max-w-sm w-full p-4  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 "
           value={value}
           onChange={handleInputChange}
         >
@@ -37,7 +37,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
       ) : field.radioButtons ? (
         <fieldset>
           {field.options.map(option => (
-            <div key={option.key} className="flex items-center mb-4">
+            <div key={option.key} className="flex items-center mt-2">
               <input
                 id={option.key}
                 type="radio"
@@ -54,7 +54,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
           ))}
         </fieldset>
       ) : field.checkable ? (
-        <div className="flex items-center mb-4">
+        <div className="max-w-sm w-full flex items-center mt-4">
           <input
             type="checkbox"
             id={field.key}

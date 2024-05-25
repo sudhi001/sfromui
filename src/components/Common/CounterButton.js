@@ -55,11 +55,11 @@ const CounterButton = ({ field, value, onChange }) => {
     onChange(quantity, field.key);
   };
   return (
-    <div className="max-w-xs mx-auto">
+    <div className="max-w-sm">
       <label htmlFor={field.key} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
         {field.label}
       </label>
-      <div className="relative flex items-center max-w-[8rem]">
+      <div className="flex max-w-[10rem]">
         <DecrementButton onClick={decrement} />
         <input
           type="text"
