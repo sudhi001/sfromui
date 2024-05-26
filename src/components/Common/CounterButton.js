@@ -54,13 +54,24 @@ const CounterButton = ({ field, value, onChange }) => {
   const handleChange = () => {
     onChange(quantity, field.key);
   };
+   // Modified increment and decrement functions to call handleChange
+   const handleIncrement = () => {
+    increment();
+    handleChange(quantity + 1);
+  };
+
+  const handleDecrement = () => {
+    decrement();
+    handleChange(quantity - 1);
+  };
+
   return (
     <div className="max-w-sm">
       <label htmlFor={field.key} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
         {field.label}
       </label>
       <div className="flex max-w-[10rem]">
-        <DecrementButton onClick={decrement} />
+        <DecrementButton onClick={handleDecrement} />
         <input
           type="text"
           id={field.key}
@@ -70,7 +81,7 @@ const CounterButton = ({ field, value, onChange }) => {
           placeholder="0"
           required
         />
-        <IncrementButton onClick={increment} />
+        <IncrementButton onClick={handleIncrement} />
       </div>
       <p id="helper-text-explanation" className="mt-2 text-sm text-gray-500 dark:text-gray-400">
         {field.placeholder}
