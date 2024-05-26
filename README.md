@@ -12,7 +12,7 @@ SFormUI is a React project aimed at dynamically creating a form UI wizard from J
 
 ### Demo
 
-Check out the live demo [here](https://sfromui-sudhi001s-projects.vercel.app).
+Check out the live demo [here](https://sformui.sudhi.in).
 
 ### Installation
 
