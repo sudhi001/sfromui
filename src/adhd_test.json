@@ -1,0 +1,277 @@
+{
+  "meta": {
+    "id": "formone",
+    "navbar": {
+      "title": "Adult ADHD Rating Scales (CAARS)",
+      "link": "https://www.sudhi.in"
+    },
+    "footer": {
+      "copyRightYears": "2023-2024",
+      "name": "sudhi.in",
+      "link": "https://www.sudhi.in"
+    }
+  },
+  "steps": [
+    {
+      "meta": {
+        "id": "step1"
+      },
+      "onNext": {
+        "id": "step2"
+      },
+      "form": [
+        {
+          "type": "HEADING",
+          "level": 1,
+          "className": "mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white",
+          "text": "Adult ADHD Rating Scales (CAARS)"
+        },
+        {
+          "type": "PARAGRAPH",
+          "className": "mb-3 text-gray-500 dark:text-gray-400",
+          "text": "The Conners' Adult ADHD Rating Scales (CAARS) is a commonly used tool for assessing ADHD symptoms in adults"
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step2"
+      },
+      "onBack": {
+        "id": "step1"
+      },
+      "onNext": {
+        "id": "step3"
+      },
+      "form": [
+        {
+          "key": "patientName",
+          "type": "input",
+          "keyoard": "text",
+          "hint": "Patient Name",
+          "label": "Patient Name",
+          "validations": [
+            {
+              "expression": "isEmpty",
+              "message": "Patient Name should not be empty"
+            }
+          ]
+        },
+        {
+          "key": "patientAge",
+          "label": "Patient Age",
+          "placeholder": " Please enter Patient age.",
+          "type": "COUNTER_BUTTON"
+        },
+        {
+          "key": "patientGender",
+          "type": "input",
+          "radioButtons": 1,
+          "label": "Gnder",
+          "options": [
+            {
+              "key": "MALE",
+              "label": "MALE",
+              "value": "MALE"
+            },
+            {
+              "key": "FEMALE",
+              "label": "FEMALE",
+              "value": "FEMALE"
+            },
+            {
+              "key": "OTHER",
+              "label": "OTHER",
+              "value": "OTHER"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step3"
+      },
+      "onBack": {
+        "id": "step2"
+      },
+      "onNext": {
+        "id": "step4"
+      },
+      "form": [
+        {
+          "key": "patientFatherAge",
+          "label": "Patient Father Age",
+          "placeholder": " Please enter Patient Father age.",
+          "type": "COUNTER_BUTTON"
+        },
+        {
+          "key": "patientMotherAge",
+          "label": "Patient Mother Age",
+          "placeholder": " Please enter Patient Mother age.",
+          "type": "COUNTER_BUTTON"
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step4"
+      },
+      "onBack": {
+        "id": "step3"
+      },
+      "onNext": {
+        "id": "step5"
+      },
+      "form": [
+        {
+          "key": "Q1",
+          "label": "Q1: How often do you have difficulty sustaining attention in tasks or play activities?",
+          "type": "OPTION_CARD_LIST",
+          "options": [
+            {
+              "key": "NOT_AT_ALL",
+              "label": "Not at all/Never",
+              "value": "0"
+            },
+            {
+              "key": "JUST_A_LITTLE",
+              "label": "Just a little",
+              "value": "1"
+            },
+            {
+              "key": "PRETTY_MUCH",
+              "label": "Pretty much",
+              "value": "2"
+            },
+            {
+              "key": "VERY_MUCH",
+              "label": "Very much",
+              "value": "3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step5"
+      },
+      "onBack": {
+        "id": "step4"
+      },
+      "onNext": {
+        "id": "step6"
+      },
+      "form": [
+        {
+          "key": "Q2",
+          "label": "Q2: How often are you forgetful in daily activities?",
+          "type": "OPTION_CARD_LIST",
+          "options": [
+            {
+              "key": "NOT_AT_ALL",
+              "label": "Not at all/Never",
+              "value": "0"
+            },
+            {
+              "key": "JUST_A_LITTLE",
+              "label": "Just a little",
+              "value": "1"
+            },
+            {
+              "key": "PRETTY_MUCH",
+              "label": "Pretty much",
+              "value": "2"
+            },
+            {
+              "key": "VERY_MUCH",
+              "label": "Very much",
+              "value": "3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step6"
+      },
+      "onBack": {
+        "id": "step5"
+      },
+      "onNext": {
+        "id": "step7"
+      },
+      "form": [
+        {
+          "key": "Q3",
+          "label": "Q3: How often do you fidget with or tap your hands or feet, or squirm in your seat?",
+          "type": "OPTION_CARD_LIST",
+          "options": [
+            {
+              "key": "NOT_AT_ALL",
+              "label": "Not at all/Never",
+              "value": "0"
+            },
+            {
+              "key": "JUST_A_LITTLE",
+              "label": "Just a little",
+              "value": "1"
+            },
+            {
+              "key": "PRETTY_MUCH",
+              "label": "Pretty much",
+              "value": "2"
+            },
+            {
+              "key": "VERY_MUCH",
+              "label": "Very much",
+              "value": "3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "meta": {
+        "id": "step7"
+      },
+      "onBack": {
+        "id": "step6"
+      },
+      "onNext": {
+        "id": "step8"
+      },
+      "form": [
+        {
+          "key": "Q4",
+          "label": "Q4: How often do you leave your seat in situations when remaining seated is expected?",
+          "type": "OPTION_CARD_LIST",
+          "options": [
+            {
+              "key": "NOT_AT_ALL",
+              "label": "Not at all/Never",
+              "value": "0"
+            },
+            {
+              "key": "JUST_A_LITTLE",
+              "label": "Just a little",
+              "value": "1"
+            },
+            {
+              "key": "PRETTY_MUCH",
+              "label": "Pretty much",
+              "value": "2"
+            },
+            {
+              "key": "VERY_MUCH",
+              "label": "Very much",
+              "value": "3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
