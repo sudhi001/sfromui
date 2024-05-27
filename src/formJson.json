@@ -3,7 +3,7 @@
   "meta": {
     "id":"formone",
     "navbar": {
-      "title": "Demo aopplicatuon",
+      "title": "Demo application",
       "link": "https://sformui.sudhi.in"
     },
     "footer": {
@@ -16,7 +16,7 @@
     {
       "meta": {
         "id": "step1",
-        "title": "Demo aopplicatuon"
+        "title": "Demo application"
       },
       "onNext": {
         "id": "step2"

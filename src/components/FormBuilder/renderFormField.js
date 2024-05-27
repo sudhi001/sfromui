@@ -1,5 +1,3 @@
-// renderFormField.js
-
 import React from 'react';
 import Blockquote from '../Common/Blockquote';
 import Heading from '../Common/Heading';
@@ -27,7 +25,7 @@ import NumberList from '../Common/NumberList';
 import TextView from '../Common/TextView';
 
 const renderFormField = (field, index, formData, errors, handleChange) => {
-  switch (field.type) {
+  switch (field.type.toUpperCase()) {
     case 'BLOCK_QUOTE':
       return <Blockquote key={index} field={field} />;
     case 'TOGGLE_SWITCH':
@@ -44,10 +42,10 @@ const renderFormField = (field, index, formData, errors, handleChange) => {
       return <DescriptionList key={index} formData={formData} field={field} />;
     case 'BULLET_LIST':
       return <BulletList key={index} formData={formData} field={field} />;
-      case 'NUMBER_LIST':
+    case 'NUMBER_LIST':
       return <NumberList key={index} formData={formData} field={field} />;
-      case 'TEXT_VIEW':
-        return <TextView key={index} formData={formData} field={field} />;
+    case 'TEXT_VIEW':
+      return <TextView key={index} formData={formData} field={field} />;
     case 'INPUT_SCALE':
       return <InputScale key={index} field={field} value={formData[field.key] || ''} onChange={handleChange} />;
     case 'PHONENUMBER_INPUT':
@@ -74,7 +72,7 @@ const renderFormField = (field, index, formData, errors, handleChange) => {
       ) : (
         <Paragraph key={index} field={field} />
       );
-    case 'input':
+    case 'INPUT':
       return (
         <InputField
           formData={formData}
@@ -85,14 +83,14 @@ const renderFormField = (field, index, formData, errors, handleChange) => {
           handleChange={handleChange}
         />
       );
-    case 'label':
+    case 'LABEL':
       return (
         <div key={field.text} className="label-container">
           <LabelField field={field} formData={formData} className="iphone-label" />
         </div>
       );
     default:
-      return null;
+      return null; // Unknown field type
   }
 };
 
