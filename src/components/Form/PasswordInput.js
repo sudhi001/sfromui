@@ -10,7 +10,7 @@ const PasswordInput = ({ field, value, onChange, error }) => {
     };
 
     return (
-        <div className="max-w-sm ">
+        <div >
             <label htmlFor={field.key} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 {field.label || 'Password:'}
             </label>

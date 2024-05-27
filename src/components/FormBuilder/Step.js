@@ -32,7 +32,7 @@ const Step = ({ step, formData, setFormData, errors, handleNext, handleBack, for
   return (
     <div className="container mx-auto py-4 px-2 mb-[64px]">
       <h1 className="text-3xl font-bold mb-3 text-center">{step.meta.title}</h1>
-      <form className="flex max-w-lg mx-auto p-4 justify-center">
+      <form className="flex max-w-sm mx-auto justify-center">
         <div className="grid grid-cols-1 gap-4">
           {step.form.map((field, index) =>
             renderFormField(field, index, formData, errors, handleChange)

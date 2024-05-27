@@ -4,7 +4,7 @@
     "id":"formone",
     "navbar": {
       "title": "Demo aopplicatuon",
-      "link": "https://www.sudhi.in"
+      "link": "https://sformui.sudhi.in"
     },
     "footer": {
       "copyRightYears": "2023",
@@ -72,15 +72,38 @@
       },
       "form": [
         {
-          "key": "name",
-          "type": "input",
-          "keyoard": "text",
+          "key": "namein",
+          "type": "NAME_INPUT",
           "hint": "Name",
           "label": "Name",
           "validations": [
             {
               "expression": "isEmpty",
               "message": "Name should not be empty"
+            }
+          ]
+        },
+        {
+          "key": "textDat",
+          "type": "TEXT_INPUT",
+          "hint": "Text Data",
+          "label": "Text",
+          "validations": [
+            {
+              "expression": "isEmpty",
+              "message": "Text should not be empty"
+            }
+          ]
+        },
+        {
+          "key": "username",
+          "type": "USERNAME_INPUT",
+          "hint": "Username is required",
+          "label": "Username",
+          "validations": [
+            {
+              "expression": "isEmpty",
+              "message": "Username should not be empty"
             }
           ]
         },
@@ -183,9 +206,21 @@
       },
       "form": [
         {
+          "key": "zip",
+          "type": "ZIP_INPUT",
+          "hint": "ZIP is required",
+          "placeholder":"12345 or 12345-6789",
+          "label": "Zip",
+          "validations": [
+            {
+              "expression": "isEmpty",
+              "message": "Zip is required"
+            }
+          ]
+        },
+        {
           "key": "age",
-          "type": "input",
-          "keyboard": "integer",
+          "type": "NUMBER_INPUT",
           "hint": "Age Of User",
           "label": "Age Of ${name}",
           "validations": [
