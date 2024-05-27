@@ -2,8 +2,6 @@ import React from 'react';
 
 const AnyTextInput = ({ field, value, onChange, error }) => {
     const handleInputChange = (e) => {
-        const value = e.target ? e.target.value : e;
-        // You can add your own validation logic here if needed
         onChange(e, field.key);
     };
 

@@ -27,7 +27,7 @@ const ZIPCodeInput = ({ field, value, onChange, error }) => {
                     className={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${error ? 'border-red-500 placeholder-red-700' : 'border-gray-300'
                         }`}
                     placeholder={field.placeholder}
-                    pattern={field.pattern ||'^\d{5}(-\d{4})?$'}
+                    pattern={field.pattern ||'^{5}(-{4})?$'}
                     value={value}
                     onChange={handleInputChange}
                     required={field.required}
