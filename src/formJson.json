@@ -85,6 +85,42 @@
           ]
         },
         {
+          "key": "phoneNumber",
+          "type": "PHONENUMBER_INPUT",
+          "hint": "Phone Number is required",
+          "label": "Phone Number",
+          "validations": [
+            {
+              "expression": "isEmpty",
+              "message": "Name should not be empty"
+            }
+          ]
+        },
+        {
+          "key": "email",
+          "type": "EMAIL_INPUT",
+          "hint": "Email is required",
+          "label": "Email",
+          "validations": [
+            {
+              "expression": "isEmpty",
+              "message": "Email should not be empty"
+            }
+          ]
+        },
+        {
+          "key": "password",
+          "type": "PASSWORD_INPUT",
+          "hint": "Password is required",
+          "label": "Password",
+          "validations": [
+            {
+              "expression": "isEmpty",
+              "message": "Password should not be empty"
+            }
+          ]
+        },
+        {
           "key": "counter",
           "label": "Counter",
           "placeholder":" Please select a 5 digit number from 0 to 9.",

@@ -11,7 +11,7 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
   };
 
   return (
-    <div>
+    <div className='max-w-sm'>
       {field.label && <LabelField field={field} formData={formData} />}
       {field.line && field.line > 1 ? (
         <textarea
@@ -75,7 +75,9 @@ const InputField = ({ formData, field, value, error, handleChange }) => {
         />
       ) : (
         <input
-          className="max-w-sm w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+          className={`bg-gray-50 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
+            error ? 'border-red-500 placeholder-red-700' : 'border-gray-300'
+        }`}
           type="text"
           placeholder={field.hint}
           value={value}

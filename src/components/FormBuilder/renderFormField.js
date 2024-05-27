@@ -12,23 +12,32 @@ import InputField from '../Form/InputField';
 import LabelField from '../Form/LabelField';
 import ToggleSwitch from '../Form/ToggleSwitch';
 import InputScale from '../Form/InputScale';
+import PhoneNumberInput from '../Form/PhoneNumberInput';
+import EmailInput from '../Form/EmailInput';
+import PasswordInput from '../Form/PasswordInput';
 
 const renderFormField = (field, index, formData, errors, handleChange) => {
   switch (field.type) {
     case 'BLOCK_QUOTE':
       return <Blockquote key={index} field={field} />;
-      case 'TOGGLE_SWITCH':
-        return <ToggleSwitch key={index} field={field} value={formData[field.key]||false} onChange={handleChange}/>;
+    case 'TOGGLE_SWITCH':
+      return <ToggleSwitch key={index} field={field} value={formData[field.key] || false} onChange={handleChange} />;
     case 'HEADING':
       return <Heading key={index} field={field} />;
     case 'OPTION_CARD_LIST':
       return <OptionCardList key={index} field={field} onChange={handleChange} formData={formData} />;
     case 'DESCRIPTION_LIST':
       return <DescriptionList key={index} formData={formData} field={field} />;
-      case 'INPUT_SCALE':
-        return <InputScale key={index}  field={field} value={formData[field.key] ||''} onChange={handleChange} />;
+    case 'INPUT_SCALE':
+      return <InputScale key={index} field={field} value={formData[field.key] || ''} onChange={handleChange} />;
+    case 'PHONENUMBER_INPUT':
+      return <PhoneNumberInput key={index} field={field} value={formData[field.key] || ''} onChange={handleChange} error={errors[field.key]} />;
+    case 'EMAIL_INPUT':
+      return <EmailInput key={index} field={field} value={formData[field.key] || ''} onChange={handleChange} error={errors[field.key]} />;
+    case 'PASSWORD_INPUT':
+      return <PasswordInput key={index} field={field} value={formData[field.key] || ''} onChange={handleChange} error={errors[field.key]} />;
     case 'COUNTER_BUTTON':
-      return <CounterButton key={index} field={field} onChange={handleChange} value={formData[field.key] || 1}/>;
+      return <CounterButton key={index} field={field} onChange={handleChange} value={formData[field.key] || 1} />;
     case 'PARAGRAPH':
       return field.subType === 'GRID' ? (
         <ParagraphGrid key={index} field={field} />
